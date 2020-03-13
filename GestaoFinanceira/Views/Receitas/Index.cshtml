@@ -1,0 +1,85 @@
+﻿@model IEnumerable<Modelo.Entidades.Receita>
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Index</title>
+</head>
+<body>
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Valor)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Descricao)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Pago)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ReceitaFixa)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ReceitaParcelada)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.QtdParcelas)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Observacao)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.DhReceita)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Valor)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Descricao)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Pago)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ReceitaFixa)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ReceitaParcelada)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.QtdParcelas)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Observacao)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.DhReceita)
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.ReceitaId">Edit</a> |
+                <a asp-action="Details" asp-route-id="@item.ReceitaId">Details</a> |
+                <a asp-action="Delete" asp-route-id="@item.ReceitaId">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
+</body>
+</html>

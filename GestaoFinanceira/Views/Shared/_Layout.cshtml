@@ -1,0 +1,515 @@
+﻿@model Modelo.Entidades.Receita
+
+<!doctype html>
+<html lang="pt-br" class="no-focus">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+
+    <title>Codebase - Bootstrap 4 Admin Template &amp; UI Framework</title>
+
+    <!-- Icons -->
+    <!-- The following icons can be replaced with your own, they are used by desktop and mobile browsers -->
+    <link rel="shortcut icon" href="Template/assets/media/favicons/favicon.png">
+    <link rel="icon" type="image/png" sizes="192x192" href="Template/assets/media/favicons/favicon-192x192.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="Template/assets/media/favicons/apple-touch-icon-180x180.png">
+    <!-- END Icons -->
+    <!-- Stylesheets -->
+    <!-- Fonts and Codebase framework -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Muli:300,400,400i,600,700">
+    <link rel="stylesheet" id="css-main" href="Template/assets/css/codebase.min.css">
+    <link href="~/css/_LayoutMenu.css" rel="stylesheet" />
+
+
+</head>
+<body>
+    <div id="page-container" class="sidebar-o enable-page-overlay side-scroll page-header-modern main-content-boxed">
+        <!-- Side Overlay-->
+        <aside id="side-overlay">
+            <!-- Side Header -->
+            <div class="content-header content-header-fullrow bg-primary-dark">
+                <div class="content-header-section align-parent">
+                    <!-- Close Side Overlay -->
+                    <!-- Layout API, functionality initialized in Template._uiApiLayout() -->
+                    <button type="button" class="btn btn-circle btn-dual-secondary align-v-r" data-toggle="layout" data-action="side_overlay_close">
+                        <i class="fa fa-times text-danger"></i>
+                    </button>
+                    <!-- END Close Side Overlay -->
+                    <!-- User Info -->
+                    <div class="content-header-item">
+                        <a class="img-link mr-5" href="javascript:void(0)">
+                            <img class="img-avatar img-avatar32" src="Template/assets/media/avatars/avatar11.jpg" alt="">
+                        </a>
+                        <a class="align-middle link-effect text-white-op font-w600" href="javascript:void(0)">Admin</a>
+                    </div>
+                    <!-- END User Info -->
+                </div>
+            </div>
+            <!-- END Side Header -->
+            <!-- Upgrade Plan -->
+            <div class="content-side content-side-full bg-danger-light">
+                <p class="mb-5 d-flex justify-content-between">
+                    <a class="text-danger font-size-xs" href="javascript:void(0)">
+                        <i class="fa fa-arrow-circle-up"></i> Upgrade
+                    </a>
+                    <span class="font-size-xs text-danger">
+                        1.9GB from <strong>2TB</strong>
+                    </span>
+                </p>
+                <div class="progress mb-0" style="height: 5px;">
+                    <div class="progress-bar bg-danger" role="progressbar" style="width: 95%;" aria-valuenow="95" aria-valuemin="0" aria-valuemax="100">
+                        <span class="progress-bar-label"></span>
+                    </div>
+                </div>
+            </div>
+            <!-- END Upgrade Plan -->
+            <!-- Side Content -->
+            <div class="content-side">
+                <!-- Mini Stats -->
+                <div class="block pull-t pull-r-l">
+                    <div class="block-content block-content-full block-content-sm bg-gd-dusk">
+                        <div class="row text-center">
+                            <div class="col-4">
+                                <div class="font-size-sm font-w600 text-uppercase text-white-op">Sales</div>
+                                <div class="font-size-h4 text-white">985</div>
+                            </div>
+                            <div class="col-4">
+                                <div class="font-size-sm font-w600 text-uppercase text-white-op">Tickets</div>
+                                <div class="font-size-h4 text-white">251</div>
+                            </div>
+                            <div class="col-4">
+                                <div class="font-size-sm font-w600 text-uppercase text-white-op">Projects</div>
+                                <div class="font-size-h4 text-white">39</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- END Mini Stats -->
+                <!-- Search -->
+                <div class="block pull-r-l">
+                    <div class="block-content block-content-full block-content-sm bg-body-light">
+                        <form>
+                            <div class="input-group">
+                                <input type="text" class="form-control" id="side-overlay-search" name="side-overlay-search" placeholder="Search..">
+                                <div class="input-group-append">
+                                    <button type="submit" class="btn btn-secondary px-10">
+                                        <i class="fa fa-search"></i>
+                                    </button>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+                <!-- END Search -->
+                <!-- Notifications -->
+                <div class="block pull-r-l">
+                    <div class="block-header bg-body-light">
+                        <h3 class="block-title">Notifications</h3>
+                        <div class="block-options">
+                            <button type="button" class="btn-block-option" data-toggle="block-option" data-action="state_toggle" data-action-mode="demo">
+                                <i class="si si-refresh"></i>
+                            </button>
+                            <button type="button" class="btn-block-option" data-toggle="block-option" data-action="content_toggle"></button>
+                        </div>
+                    </div>
+                    <div class="block-content">
+                        <ul class="list list-activity">
+                            <li>
+                                <i class="si si-wallet text-success"></i>
+                                <div class="font-w600">+$29 New sale</div>
+                                <div>
+                                    <a href="javascript:void(0)">Admin Template</a>
+                                </div>
+                                <div class="font-size-xs text-muted">5 min ago</div>
+                            </li>
+                            <li>
+                                <i class="si si-close text-danger"></i>
+                                <div class="font-w600">Project removed</div>
+                                <div>
+                                    <a href="javascript:void(0)">Best Icon Set</a>
+                                </div>
+                                <div class="font-size-xs text-muted">26 min ago</div>
+                            </li>
+                            <li>
+                                <i class="si si-pencil text-info"></i>
+                                <div class="font-w600">You edited the file</div>
+                                <div>
+                                    <a href="javascript:void(0)">
+                                        <i class="fa fa-file-text-o"></i> Docs.doc
+                                    </a>
+                                </div>
+                                <div class="font-size-xs text-muted">3 hours ago</div>
+                            </li>
+                            <li>
+                                <i class="si si-plus text-success"></i>
+                                <div class="font-w600">New user</div>
+                                <div>
+                                    <a href="javascript:void(0)">StudioWeb - View Profile</a>
+                                </div>
+                                <div class="font-size-xs text-muted">5 hours ago</div>
+                            </li>
+                            <li>
+                                <i class="si si-wrench text-warning"></i>
+                                <div class="font-w600">Core v3.9 is available</div>
+                                <div>
+                                    <a href="javascript:void(0)">Update now</a>
+                                </div>
+                                <div class="font-size-xs text-muted">8 hours ago</div>
+                            </li>
+                            <li>
+                                <i class="si si-user-follow text-pulse"></i>
+                                <div class="font-w600">+1 Friend Request</div>
+                                <div>
+                                    <a href="javascript:void(0)">Accept</a>
+                                </div>
+                                <div class="font-size-xs text-muted">1 day ago</div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <!-- END Notifications -->
+            </div>
+            <!-- END Side Content -->
+        </aside>
+        <!-- END Side Overlay -->
+        <!-- Sidebar -->
+        <nav id="sidebar">
+            <!-- Sidebar Content -->
+            <div class="sidebar-content">
+                <!-- Side Header -->
+                <div class="content-header content-header-fullrow px-15">
+                    <!-- Mini Mode -->
+                    <div class="content-header-section sidebar-mini-visible-b">
+                        <!-- Logo -->
+                        <span class="content-header-item font-w700 font-size-xl float-left animated fadeIn">
+                            <span class="text-dual-primary-dark">c</span><span class="text-primary">b</span>
+                        </span>
+                        <!-- END Logo -->
+                    </div>
+                    <!-- END Mini Mode -->
+                    <!-- Normal Mode -->
+                    <div class="content-header-section text-center align-parent sidebar-mini-hidden">
+                        <!-- Close Sidebar, Visible only on mobile screens -->
+                        <!-- Layout API, functionality initialized in Template._uiApiLayout() -->
+                        <button type="button" class="btn btn-circle btn-dual-secondary d-lg-none align-v-r" data-toggle="layout" data-action="sidebar_close">
+                            <i class="fa fa-times text-danger"></i>
+                        </button>
+                        <!-- END Close Sidebar -->
+                        <!-- Logo -->
+                        <div class="content-header-item">
+                            <a class="link-effect font-w700" href="index.html">
+                                <i class="si si-fire text-primary"></i>
+                                <span class="font-size-xl text-dual-primary-dark">code</span><span class="font-size-xl text-primary">base</span>
+                            </a>
+                        </div>
+                        <!-- END Logo -->
+                    </div>
+                    <!-- END Normal Mode -->
+                </div>
+                <!-- END Side Header -->
+                <!-- New Account -->
+                <div class="content-side content-side-full bg-body-light">
+                    <button type="button" class="btn btn-sm btn-block btn-hero btn-alt-primary" data-toggle="click-ripple">
+                        <i class="fa fa-user-plus mr-5"></i> New Account
+                    </button>
+                </div>
+                <!-- END New Account -->
+                <!-- Side Navigation -->
+                <div class="content-side content-side-full">
+                    <ul class="nav-main">
+                        <li>
+                            <a class="active" href="db_clean.html"><i class="si si-home"></i><span class="sidebar-mini-hide">Home <span class="badge badge-pill badge-primary ml-5">3</span></span></a>
+                        </li>
+                        <li>
+                            <a asp-controller="Dashboard" asp-action="Index"><i class="si si-docs"></i><span class="sidebar-mini-hide">Dashboard</span></a>
+                        </li>
+                        <li>
+                            <a href=""><i class="si si-users"></i><span class="sidebar-mini-hide">Transações</span></a>
+                        </li>
+                        <li>
+                            <a href=""><i class="si si-energy"></i><span class="sidebar-mini-hide">Cartões de Crédito</span></a>
+                        </li>
+                        <li>
+                            <a href=""><i class="si si-wallet"></i><span class="sidebar-mini-hide">Planejemento</span></a>
+                        </li>
+                        <li>
+                            <a href=""><i class="si si-fire"></i><span class="sidebar-mini-hide">Contas</span></a>
+                        </li>
+                        <li>
+                            <a href=""><i class="si si-pencil"></i><span class="sidebar-mini-hide">Relatórios</span></a>
+                        </li>
+                        <li>
+                            <a href=""><i class="si si-flag"></i><span class="sidebar-mini-hide">Configurações</span></a>
+                        </li>
+                    </ul>
+                </div>
+                <!-- END Side Navigation -->
+            </div>
+            <!-- Sidebar Content -->
+        </nav>
+        <!-- END Sidebar -->
+        <!-- Header -->
+        <header id="page-header">
+            <!-- Header Content -->
+            <div class="content-header">
+                <!-- Left Section -->
+                <div class="content-header-section">
+                    <!-- Toggle Sidebar -->
+                    <!-- Layout API, functionality initialized in Template._uiApiLayout() -->
+                    <button type="button" class="btn btn-circle btn-dual-secondary" data-toggle="layout" data-action="sidebar_toggle">
+                        <i class="fa fa-navicon"></i>
+                    </button>
+                    <!-- END Toggle Sidebar -->
+                    <!-- Open Search Section -->
+                    <!-- Layout API, functionality initialized in Template._uiApiLayout() -->
+                    <button type="button" class="btn btn-circle btn-dual-secondary" data-toggle="layout" data-action="header_search_on">
+                        <i class="fa fa-search"></i>
+                    </button>
+                    <!-- END Open Search Section -->
+                </div>
+                <!-- END Left Section -->
+                <!-- Right Section -->
+                <div class="content-header-section">
+                    <!-- User Dropdown -->
+                    <div class="btn-group" role="group">
+                        <button type="button" class="btn btn-rounded btn-dual-secondary" id="page-header-user-dropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            Admin<i class="fa fa-angle-down ml-5"></i>
+                        </button>
+                        <div class="dropdown-menu dropdown-menu-right min-width-150" aria-labelledby="page-header-user-dropdown">
+                            <a class="dropdown-item" href="javascript:void(0)">
+                                <i class="si si-user mr-5"></i> Profile
+                            </a>
+                            <a class="dropdown-item d-flex align-items-center justify-content-between" href="javascript:void(0)">
+                                <span><i class="si si-envelope-open mr-5"></i> Inbox</span>
+                                <span class="badge badge-primary">3</span>
+                            </a>
+                            <a class="dropdown-item" href="javascript:void(0)">
+                                <i class="si si-note mr-5"></i> Invoices
+                            </a>
+                            <div class="dropdown-divider"></div>
+
+                            <!-- Toggle Side Overlay -->
+                            <!-- Layout API, functionality initialized in Template._uiApiLayout() -->
+                            <a class="dropdown-item" href="javascript:void(0)" data-toggle="layout" data-action="side_overlay_toggle">
+                                <i class="si si-wrench mr-5"></i> Settings
+                            </a>
+                            <!-- END Side Overlay -->
+
+                            <div class="dropdown-divider"></div>
+                            <a class="dropdown-item" href="javascript:void(0)">
+                                <i class="si si-logout mr-5"></i> Sign Out
+                            </a>
+                        </div>
+                    </div>
+                    <!-- END User Dropdown -->
+                    <!-- Toggle Side Overlay -->
+                    <!-- Layout API, functionality initialized in Template._uiApiLayout() -->
+                    <button type="button" class="btn btn-rounded btn-dual-secondary" data-toggle="layout" data-action="side_overlay_toggle">
+                        <i class="fa fa-tasks"></i>
+                        <span class="badge badge-pill badge-danger ml-5">
+                            <i class="fa fa-exclamation-triangle mr-5"></i>1
+                        </span>
+                    </button>
+                    <!-- END Toggle Side Overlay -->
+                </div>
+                <!-- END Right Section -->
+            </div>
+            <!-- END Header Content -->
+            <!-- Header Search -->
+            <div id="page-header-search" class="overlay-header">
+                <div class="content-header content-header-fullrow">
+                    <form>
+                        <div class="input-group">
+                            <div class="input-group-prepend">
+                                <!-- Close Search Section -->
+                                <!-- Layout API, functionality initialized in Template._uiApiLayout() -->
+                                <button type="button" class="btn btn-secondary px-15" data-toggle="layout" data-action="header_search_off">
+                                    <i class="fa fa-times"></i>
+                                </button>
+                                <!-- END Close Search Section -->
+                            </div>
+                            <input type="text" class="form-control" placeholder="Search or hit ESC.." id="page-header-search-input" name="page-header-search-input">
+                            <div class="input-group-append">
+                                <button type="submit" class="btn btn-secondary px-15">
+                                    <i class="fa fa-search"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+            <!-- END Header Search -->
+            <!-- Header Loader -->
+            <div id="page-header-loader" class="overlay-header bg-primary">
+                <div class="content-header content-header-fullrow text-center">
+                    <div class="content-header-item">
+                        <i class="fa fa-sun-o fa-spin text-white"></i>
+                    </div>
+                </div>
+            </div>
+            <!-- END Header Loader -->
+        </header>
+        <!-- END Header -->
+        <!-- Main Container -->
+        <main id="main-container mx-4">
+            <div>
+                @RenderBody()
+            </div>
+
+            <!-- Botão Flutuante -->
+            <div class="fab">
+                <button class="main">
+                </button>
+                <ul>
+                    <li>
+                        <label for="opcao1">Receita</label>
+                        <button id="opcao1" data-toggle="modal" data-target="#modal-popin">
+                            ⎈
+                        </button>
+                    </li>
+                    @*<li>
+                            <label for="opcao2">Despesa </label>
+                            <button id="opcao2">
+                                ⎗
+                            </button>
+                        </li>*@
+                    @*<li>
+                            <label for="opcao3">Opção 3</label>
+                            <button id="opcao3">
+                                ☏
+                            </button>
+                        </li>*@
+                </ul>
+            </div>
+            <!-- End Botão Flutuante -->
+            <!-- Pop In Modal -->
+            <div class="modal fade" id="modal-popin" tabindex="-1" role="dialog" aria-labelledby="modal-popin" aria-hidden="true">
+                <div class="modal-dialog modal-dialog-popin modal-lg" role="document">
+                    <div class="modal-content">
+                        <div class="block block-themed block-transparent mb-0">
+                            <div class="block-header" style="background-color:#006400">
+                                <h3 class="block-title">NOVA RECEITA</h3>
+                                <div class="block-options">
+                                    <button type="button" class="btn-block-option" data-dismiss="modal" aria-label="Close">
+                                        <i class="si si-close"></i>
+                                    </button>
+                                </div>
+                            </div>
+                            <div class="block-content">
+                                <div class="row">
+                                    <div class="col-5">
+                                        <div class="form-group">
+                                            <div class="form-material">
+                                                <input type="text" class="form-control" id="txtValor" name="material-text" placeholder="0,00">
+                                                <label for="material-text">Valor</label>
+                                                <div class="invalid-feedback animated fadeInDown">N/A</div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="col-5">
+                                        <div class="form-group">
+                                            <div class="form-material">
+                                                <input type="date" class="form-control" id="txtData" name="material-text">
+                                                <label for="material-text">Data</label>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="col-2 align-self-end">
+                                        <div class="form-group">
+                                            <label class="css-control css-control-success css-checkbox">
+                                                <input type="checkbox" class="css-control-input" id="chkPago" checked>
+                                                <span class="css-control-indicator"></span> Está Pago
+                                            </label>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="form-group row">
+                                    <div class="col-md-6">
+                                        <div class="form-material">
+                                            <select class="form-control" id="ddlCategoria" name="material-select">
+                                                <option>Selecione</option>
+                                                <option value="1">Option #1</option>
+                                                <option value="2">Option #2</option>
+                                                <option value="3">Option #3</option>
+                                            </select>
+                                            <label for="material-select">Categoria</label>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="form-material">
+                                            <select class="form-control" id="ddlSubCategoria" name="material-select">
+                                                <option>Selecione</option>
+                                                <option value="1">Option #1</option>
+                                                <option value="2">Option #2</option>
+                                                <option value="3">Option #3</option>
+                                            </select>
+                                            <label for="material-select">Sub Categoria</label>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="row">
+                                    <div class="col-12">
+                                        <div class="form-group">
+                                            <div class="form-material">
+                                                <textarea class="form-control" id="txtDescricao" name="material-textarea-small" rows="3"></textarea>
+                                                <label for="material-textarea-small">Descrição</label>
+                                                <div class="invalid-feedback animated fadeInDown">N/A</div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="form-group row">
+                                    <div class="col-4 align-self-end">
+                                        <label class="css-control css-control-success css-checkbox">
+                                            <input type="checkbox" class="css-control-input" id="chkReceitaFixa">
+                                            <span class="css-control-indicator"></span> Receita Fixa
+                                        </label>
+                                    </div>
+
+                                    <div class="col-4 align-self-end">
+                                        <label class="css-control css-control-success css-checkbox">
+                                            <input type="checkbox" class="css-control-input" id="chkRepetir">
+                                            <span class="css-control-indicator"></span> Repetir
+                                        </label>
+                                    </div>
+                                    <div class="col-4">
+                                        <div class="form-material">
+                                            <input type="number" class="form-control" id="txtQtdParcelas" name="material-text" disabled>
+                                            <label for="material-text">Parcelas</label>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-alt-secondary" data-dismiss="modal">VOLTAR</button>
+                            <button type="button" id="btnSalvar" class="btn btn-alt-success">
+                                <i class="fa fa-check"></i> SALVAR
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- END Pop In Modal -->
+        </main>
+        <!-- END Main Container -->
+
+    </div>
+
+    <script src="Template/assets/js/codebase.core.min.js"></script>
+    <script src="Template/assets/js/codebase.app.min.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="~/js/_LayoutMenu.js"></script>
+    <script src="~/lib/jquery.unobtrusive-ajax/jquery.unobtrusive-ajax.js"></script>
+    <script src="~/js/site.js" asp-append-version="true"></script>
+
+
+    @RenderSection("Scripts", required: false)
+
+</body>
+</html>
