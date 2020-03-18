@@ -1,7 +1,6 @@
 ﻿using System;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.EntityFrameworkCore;
 using Modelo.Entidades;
 using Newtonsoft.Json;
 using Persistencia.Context;
@@ -9,21 +8,21 @@ using Persistencia.DAL.Entidades;
 
 namespace GestaoFinanceira.Controllers
 {
-    public class ReceitaController : Controller
+    public class DespesaController : Controller
     {
-        private readonly ReceitaDAL receitaDAL;
+        private readonly DespesaDAL despesaDAL;
 
-        public ReceitaController(EFContext context)
+        public DespesaController(EFContext context)
         {
-            receitaDAL = new ReceitaDAL(context);
+            despesaDAL = new DespesaDAL(context);
         }
 
         [HttpPost]
-        public async Task<string> GravarReceita(Receita objeto)
+        public async Task<string> GravarDespesa(Despesa objeto)
         {
             try
             {
-                await receitaDAL.GravarReceita(objeto);
+                await despesaDAL.GravarDespesa(objeto);
                 return JsonConvert.SerializeObject(new
                 {
                     OK = "true"
@@ -33,8 +32,7 @@ namespace GestaoFinanceira.Controllers
             {
                 return "[Erro]" + ex.Message;
             }
-        }
 
+        }
     }
 }
-

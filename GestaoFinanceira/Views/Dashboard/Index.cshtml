@@ -1,17 +1,20 @@
-﻿
-@{
+﻿@{
     ViewData["Title"] = "Index";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<h1>Dashboard</h1>
+<div class="row">
+    <div class="col">
+        <h1>Dashboard</h1>
+    </div>
+</div>
 
 <div class="row">
     <div class="col-md-6 col-xl-3">
         <a class="block block-link-shadow text-right" href="javascript:void(0)">
             <div class="block-content block-content-full clearfix">
                 <div class="float-left mt-10">
-                    <i class="si si-wallet fa-3x text-body-bg-dark"></i>
+                    <i class="fas fa-wallet fa-3x text-corporate"></i>
                 </div>
                 <div class="font-size-h3 font-w600">R$ </div>
                 <div class="font-size-sm font-w600 text-muted">Saldo Atual</div>
@@ -23,7 +26,7 @@
         <a class="block block-link-shadow text-right" href="javascript:void(0)">
             <div class="block-content block-content-full clearfix">
                 <div class="float-left mt-10">
-                    <i class="si si-wallet fa-3x text-body-bg-dark"></i>
+                    <i class="fas fa-arrow-circle-up fa-3x" style="color:#006400;"></i>
                 </div>
                 <div class="font-size-h3 font-w600">R$ @ViewBag.somaReceitaMensal</div>
                 <div class="font-size-sm font-w600 text-muted">Receitas</div>
@@ -35,9 +38,9 @@
         <a class="block block-link-shadow text-right" href="javascript:void(0)">
             <div class="block-content block-content-full clearfix">
                 <div class="float-left mt-10">
-                    <i class="si si-wallet fa-3x text-body-bg-dark"></i>
+                    <i class="fas fa-arrow-circle-down fa-3x" style="color:#8B0000;"></i>
                 </div>
-                <div class="font-size-h3 font-w600">R$ </div>
+                <div class="font-size-h3 font-w600">R$ @ViewBag.somaDespesaMensal</div>
                 <div class="font-size-sm font-w600 text-muted">Despesas</div>
             </div>
         </a>
@@ -55,4 +58,3 @@
         </a>
     </div>
 </div>
-

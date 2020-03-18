@@ -34,7 +34,7 @@ namespace GestaoFinanceira.Controllers.Scafolding
             }
 
             var receita = await _context.Receitas
-                .FirstOrDefaultAsync(m => m.ReceitaId == id);
+                .FirstOrDefaultAsync(m => m.Id == id);
 
 
             if (receita == null)
@@ -127,7 +127,7 @@ namespace GestaoFinanceira.Controllers.Scafolding
             }
 
             var receita = await _context.Receitas
-                .FirstOrDefaultAsync(m => m.ReceitaId == id);
+                .FirstOrDefaultAsync(m => m.Id == id);
             if (receita == null)
             {
                 return NotFound();
@@ -149,7 +149,7 @@ namespace GestaoFinanceira.Controllers.Scafolding
 
         private bool ReceitaExists(long id)
         {
-            return _context.Receitas.Any(e => e.ReceitaId == id);
+            return _context.Receitas.Any(e => e.Id == id);
         }
     }
 }

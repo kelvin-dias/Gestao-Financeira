@@ -19,7 +19,7 @@
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Muli:300,400,400i,600,700">
     <link rel="stylesheet" id="css-main" href="Template/assets/css/codebase.min.css">
     <link href="~/css/_LayoutMenu.css" rel="stylesheet" />
-
+    <link href="~/Template/assets/_scss/vendor/fontawesome5/fontawesome 5.7/css/all.css" rel="stylesheet" />
 
 </head>
 <body>
@@ -207,24 +207,14 @@
                     <!-- END Normal Mode -->
                 </div>
                 <!-- END Side Header -->
-                <!-- New Account -->
-                <div class="content-side content-side-full bg-body-light">
-                    <button type="button" class="btn btn-sm btn-block btn-hero btn-alt-primary" data-toggle="click-ripple">
-                        <i class="fa fa-user-plus mr-5"></i> New Account
-                    </button>
-                </div>
-                <!-- END New Account -->
                 <!-- Side Navigation -->
                 <div class="content-side content-side-full">
                     <ul class="nav-main">
                         <li>
-                            <a class="active" href="db_clean.html"><i class="si si-home"></i><span class="sidebar-mini-hide">Home <span class="badge badge-pill badge-primary ml-5">3</span></span></a>
+                            <a asp-controller="Dashboard" asp-action="Index" class="active"><i class="si si-docs"></i><span class="sidebar-mini-hide">Dashboard</span></a>
                         </li>
                         <li>
-                            <a asp-controller="Dashboard" asp-action="Index"><i class="si si-docs"></i><span class="sidebar-mini-hide">Dashboard</span></a>
-                        </li>
-                        <li>
-                            <a href=""><i class="si si-users"></i><span class="sidebar-mini-hide">Transações</span></a>
+                            <a asp-controller="Transacoes" asp-action="Index"><i class="si si-users"></i><span class="sidebar-mini-hide">Transações</span></a>
                         </li>
                         <li>
                             <a href=""><i class="si si-energy"></i><span class="sidebar-mini-hide">Cartões de Crédito</span></a>
@@ -352,162 +342,269 @@
         <!-- END Header -->
         <!-- Main Container -->
         <main id="main-container mx-4">
-            <div>
+            <div class="content">
                 @RenderBody()
             </div>
+            <partial name="~/Views/Shared/_BotaoFlutuante.cshtml" />
+        </main>
+        <!-- END Main Container -->
+    </div>
 
-            <!-- Botão Flutuante -->
-            <div class="fab">
-                <button class="main">
-                </button>
-                <ul>
-                    <li>
-                        <label for="opcao1">Receita</label>
-                        <button id="opcao1" data-toggle="modal" data-target="#modal-popin">
-                            ⎈
-                        </button>
-                    </li>
-                    @*<li>
-                            <label for="opcao2">Despesa </label>
-                            <button id="opcao2">
-                                ⎗
-                            </button>
-                        </li>*@
-                    @*<li>
-                            <label for="opcao3">Opção 3</label>
-                            <button id="opcao3">
-                                ☏
-                            </button>
-                        </li>*@
-                </ul>
-            </div>
-            <!-- End Botão Flutuante -->
-            <!-- Pop In Modal -->
-            <div class="modal fade" id="modal-popin" tabindex="-1" role="dialog" aria-labelledby="modal-popin" aria-hidden="true">
-                <div class="modal-dialog modal-dialog-popin modal-lg" role="document">
-                    <div class="modal-content">
-                        <div class="block block-themed block-transparent mb-0">
-                            <div class="block-header" style="background-color:#006400">
-                                <h3 class="block-title">NOVA RECEITA</h3>
-                                <div class="block-options">
-                                    <button type="button" class="btn-block-option" data-dismiss="modal" aria-label="Close">
-                                        <i class="si si-close"></i>
-                                    </button>
-                                </div>
-                            </div>
-                            <div class="block-content">
-                                <div class="row">
-                                    <div class="col-5">
-                                        <div class="form-group">
-                                            <div class="form-material">
-                                                <input type="text" class="form-control" id="txtValor" name="material-text" placeholder="0,00">
-                                                <label for="material-text">Valor</label>
-                                                <div class="invalid-feedback animated fadeInDown">N/A</div>
-                                            </div>
-                                        </div>
-                                    </div>
-
-                                    <div class="col-5">
-                                        <div class="form-group">
-                                            <div class="form-material">
-                                                <input type="date" class="form-control" id="txtData" name="material-text">
-                                                <label for="material-text">Data</label>
-                                            </div>
-                                        </div>
-                                    </div>
-
-                                    <div class="col-2 align-self-end">
-                                        <div class="form-group">
-                                            <label class="css-control css-control-success css-checkbox">
-                                                <input type="checkbox" class="css-control-input" id="chkPago" checked>
-                                                <span class="css-control-indicator"></span> Está Pago
-                                            </label>
-                                        </div>
-                                    </div>
-                                </div>
-
-                                <div class="form-group row">
-                                    <div class="col-md-6">
-                                        <div class="form-material">
-                                            <select class="form-control" id="ddlCategoria" name="material-select">
-                                                <option>Selecione</option>
-                                                <option value="1">Option #1</option>
-                                                <option value="2">Option #2</option>
-                                                <option value="3">Option #3</option>
-                                            </select>
-                                            <label for="material-select">Categoria</label>
-                                        </div>
-                                    </div>
-                                    <div class="col-md-6">
-                                        <div class="form-material">
-                                            <select class="form-control" id="ddlSubCategoria" name="material-select">
-                                                <option>Selecione</option>
-                                                <option value="1">Option #1</option>
-                                                <option value="2">Option #2</option>
-                                                <option value="3">Option #3</option>
-                                            </select>
-                                            <label for="material-select">Sub Categoria</label>
-                                        </div>
-                                    </div>
-                                </div>
-
-                                <div class="row">
-                                    <div class="col-12">
-                                        <div class="form-group">
-                                            <div class="form-material">
-                                                <textarea class="form-control" id="txtDescricao" name="material-textarea-small" rows="3"></textarea>
-                                                <label for="material-textarea-small">Descrição</label>
-                                                <div class="invalid-feedback animated fadeInDown">N/A</div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-
-                                <div class="form-group row">
-                                    <div class="col-4 align-self-end">
-                                        <label class="css-control css-control-success css-checkbox">
-                                            <input type="checkbox" class="css-control-input" id="chkReceitaFixa">
-                                            <span class="css-control-indicator"></span> Receita Fixa
-                                        </label>
-                                    </div>
-
-                                    <div class="col-4 align-self-end">
-                                        <label class="css-control css-control-success css-checkbox">
-                                            <input type="checkbox" class="css-control-input" id="chkRepetir">
-                                            <span class="css-control-indicator"></span> Repetir
-                                        </label>
-                                    </div>
-                                    <div class="col-4">
-                                        <div class="form-material">
-                                            <input type="number" class="form-control" id="txtQtdParcelas" name="material-text" disabled>
-                                            <label for="material-text">Parcelas</label>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="modal-footer">
-                            <button type="button" class="btn btn-alt-secondary" data-dismiss="modal">VOLTAR</button>
-                            <button type="button" id="btnSalvar" class="btn btn-alt-success">
-                                <i class="fa fa-check"></i> SALVAR
+    <!-- Pop In Modal Receita -->
+    <div class="modal fade" id="modal-popin" tabindex="-1" role="dialog" aria-labelledby="modal-popin" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-popin modal-lg" role="document">
+            <div class="modal-content">
+                <div class="block block-themed block-transparent mb-0">
+                    <div class="block-header bg-gd-earth">
+                        <h3 class="block-title">NOVA RECEITA</h3>
+                        <div class="block-options">
+                            <button type="button" class="btn-block-option" data-dismiss="modal" aria-label="Close">
+                                <i class="si si-close"></i>
                             </button>
                         </div>
                     </div>
+                    <div class="block-content">
+                        <div class="row">
+                            <div class="col-5">
+                                <div class="form-group">
+                                    <div class="form-material">
+                                        <input type="text" class="form-control" id="txtValor" name="material-text" placeholder="0,00">
+                                        <label for="material-text">Valor</label>
+                                        <div class="invalid-feedback animated fadeInDown">N/A</div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col-5">
+                                <div class="form-group">
+                                    <div class="form-material">
+                                        <input type="date" class="form-control" id="txtData" name="material-text">
+                                        <label for="material-text">Data</label>
+                                        <div class="invalid-feedback animated fadeInDown">N/A</div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col-2 align-self-end">
+                                <div class="form-group">
+                                    <label class="css-control css-control-success css-checkbox">
+                                        <input type="checkbox" class="css-control-input" id="chkPago" checked>
+                                        <span class="css-control-indicator"></span> Está Pago
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <div class="form-material">
+                                        <select class="form-control" id="ddlCategoria" name="material-select">
+                                            <option value="0">Selecione</option>
+                                            <option value="1">Option #1</option>
+                                            <option value="2">Option #2</option>
+                                            <option value="3">Option #3</option>
+                                        </select>
+                                        <label for="material-select">Categoria</label>
+                                        <div class="invalid-feedback animated fadeInDown">N/A</div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <div class="form-material">
+                                        <select class="form-control" id="ddlSubCategoria" name="material-select">
+                                            <option>Selecione</option>
+                                            <option value="1">Option #1</option>
+                                            <option value="2">Option #2</option>
+                                            <option value="3">Option #3</option>
+                                        </select>
+                                        <label for="material-select">Sub Categoria</label>
+                                        <div class="invalid-feedback animated fadeInDown">N/A</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="col-12">
+                                <div class="form-group">
+                                    <div class="form-material">
+                                        <textarea class="form-control" id="txtDescricao" name="material-textarea-small" rows="3"></textarea>
+                                        <label for="material-textarea-small">Descrição</label>
+                                        <div class="invalid-feedback animated fadeInDown">N/A</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="form-group row">
+                            <div class="col-4 align-self-end">
+                                <label class="css-control css-control-success css-checkbox">
+                                    <input type="checkbox" class="css-control-input" id="chkReceitaFixa">
+                                    <span class="css-control-indicator"></span> Receita Fixa
+                                </label>
+                            </div>
+
+                            <div class="col-4 align-self-end">
+                                <label class="css-control css-control-success css-checkbox">
+                                    <input type="checkbox" class="css-control-input" id="chkRepetir">
+                                    <span class="css-control-indicator"></span> Repetir
+                                </label>
+                            </div>
+                            <div class="col-4">
+                                <div class="form-material">
+                                    <input type="number" class="form-control" id="txtQtdParcelas" name="material-text" disabled>
+                                    <label for="material-text">Parcelas</label>
+                                    <div class="invalid-feedback animated fadeInDown">N/A</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-alt-secondary" data-dismiss="modal">VOLTAR</button>
+                    <button type="button" id="btnSalvar" class="btn btn-alt-success">
+                        <i class="fa fa-check"></i> SALVAR
+                    </button>
                 </div>
             </div>
-            <!-- END Pop In Modal -->
-        </main>
-        <!-- END Main Container -->
-
+        </div>
     </div>
+    <!-- END Pop In Modal -->
+    <!-- Pop In Modal Despesa -->
+    <div class="modal fade" id="modal-popin-despesa" tabindex="-1" role="dialog" aria-labelledby="modal-popin" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-popin modal-lg" role="document">
+            <div class="modal-content">
+                <div class="block block-themed block-transparent mb-0">
+                    <div class="block-header bg-gd-pulse">
+                        <h3 class="block-title">NOVA DESPESA</h3>
+                        <div class="block-options">
+                            <button type="button" class="btn-block-option" data-dismiss="modal" aria-label="Close">
+                                <i class="si si-close"></i>
+                            </button>
+                        </div>
+                    </div>
+                    <div class="block-content">
+                        <div class="row">
+                            <div class="col-5">
+                                <div class="form-group">
+                                    <div class="form-material">
+                                        <input type="text" class="form-control" id="txtValorDespesa" name="material-text" placeholder="0,00">
+                                        <label for="material-text">Valor</label>
+                                        <div class="invalid-feedback animated fadeInDown">N/A</div>
+                                    </div>
+                                </div>
+                            </div>
 
+                            <div class="col-5">
+                                <div class="form-group">
+                                    <div class="form-material">
+                                        <input type="date" class="form-control" id="txtDataDespesa" name="material-text">
+                                        <label for="material-text">Data</label>
+                                        <div class="invalid-feedback animated fadeInDown">N/A</div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col-2 align-self-end">
+                                <div class="form-group">
+                                    <label class="css-control css-control-danger css-checkbox">
+                                        <input type="checkbox" class="css-control-input" id="chkPagoDespesa" checked>
+                                        <span class="css-control-indicator"></span> Está Pago
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <div class="form-material">
+                                        <select class="form-control" id="ddlCategoriaDespesa" name="material-select">
+                                            <option value="0">Selecione</option>
+                                            <option value="1">Option #1</option>
+                                            <option value="2">Option #2</option>
+                                            <option value="3">Option #3</option>
+                                        </select>
+                                        <label for="material-select">Categoria</label>
+                                        <div class="invalid-feedback animated fadeInDown">N/A</div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <div class="form-material">
+                                        <select class="form-control" id="ddlSubCategoriaDespesa" name="material-select">
+                                            <option>Selecione</option>
+                                            <option value="1">Option #1</option>
+                                            <option value="2">Option #2</option>
+                                            <option value="3">Option #3</option>
+                                        </select>
+                                        <label for="material-select">Sub Categoria</label>
+                                        <div class="invalid-feedback animated fadeInDown">N/A</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="col-12">
+                                <div class="form-group">
+                                    <div class="form-material">
+                                        <textarea class="form-control" id="txtDescricaoDespesa" name="material-textarea-small" rows="3"></textarea>
+                                        <label for="material-textarea-small">Descrição</label>
+                                        <div class="invalid-feedback animated fadeInDown">N/A</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="form-group row">
+                            <div class="col-4 align-self-end">
+                                <label class="css-control css-control-danger css-checkbox">
+                                    <input type="checkbox" class="css-control-input" id="chkReceitaFixaDespesa">
+                                    <span class="css-control-indicator"></span> Receita Fixa
+                                </label>
+                            </div>
+
+                            <div class="col-4 align-self-end">
+                                <label class="css-control css-control-danger css-checkbox">
+                                    <input type="checkbox" class="css-control-input" id="chkRepetirDespesa">
+                                    <span class="css-control-indicator"></span> Repetir
+                                </label>
+                            </div>
+                            <div class="col-4">
+                                <div class="form-material">
+                                    <input type="number" class="form-control" id="txtQtdParcelasDespesa" name="material-text" disabled>
+                                    <label for="material-text">Parcelas</label>
+                                    <div class="invalid-feedback animated fadeInDown">N/A</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-alt-secondary" data-dismiss="modal">VOLTAR</button>
+                    <button type="button" id="btnSalvarDespesa" class="btn btn-alt-danger">
+                        <i class="fa fa-check"></i> SALVAR
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- END Pop In Modal -->
+
+    <script src="~/lib/jquery/dist/jquery.js"></script>
     <script src="Template/assets/js/codebase.core.min.js"></script>
     <script src="Template/assets/js/codebase.app.min.js"></script>
     <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
     <script src="~/js/_LayoutMenu.js"></script>
     <script src="~/lib/jquery.unobtrusive-ajax/jquery.unobtrusive-ajax.js"></script>
-    <script src="~/js/site.js" asp-append-version="true"></script>
-
+    <script src="~/lib/jquery-mask-Plugin-master/jquery.mask.min.js"></script>
+    <script src="Template/assets/js/plugins/bootstrap-notify/bootstrap-notify.min.js"></script>
+    @*<script src="Template/assets/js/plugins/es6-promise/es6-promise.auto.min.js"></script>*@
+    @*<script src="Template/assets/js/plugins/sweetalert2/sweetalert2.min.js"></script>*@
 
     @RenderSection("Scripts", required: false)
 

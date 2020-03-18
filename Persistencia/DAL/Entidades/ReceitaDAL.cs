@@ -1,6 +1,7 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using Modelo.Entidades;
 using Persistencia.Context;
+using System;
 using System.Linq;
 using System.Threading.Tasks;
 
@@ -17,7 +18,7 @@ namespace Persistencia.DAL.Entidades
 
         public async Task GravarReceita(Receita receita)
         {
-            if (receita.ReceitaId == null)
+            if (receita.Id == null)
             {
                 _context.Receitas.Add(receita);
             }
@@ -31,8 +32,21 @@ namespace Persistencia.DAL.Entidades
 
         public decimal ObterSomaReceitaMensal(int mes, int ano)
         {
-            return _context.Receitas.Where(x => x.DhReceita.Month == mes && x.DhReceita.Year == ano).Sum(x => x.Valor);
+            return _context.Receitas.Where(x => x.DataHora.Month == mes && x.DataHora.Year == ano).Sum(x => x.Valor);
         }
+
+        public IQueryable<Receita> ObterReceitasOrdenadasPorData(int mes)
+        {
+            return _context.Receitas
+                           .Where(x => x.DataHora.Month == mes && x.DataHora.Year == DateTime.Now.Year)
+                           .OrderBy(b => b.DataHora);
+        }
+
+        public IQueryable<Receita> ObterReceitasOrdenadasPorData()
+        {
+            return _context.Receitas.OrderBy(b => b.DataHora);
+        }
+
 
     }
 }

@@ -1,0 +1,53 @@
+﻿@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="row">
+    <div class="dropdown ml-3">
+        <button class="btn btn-hero btn-primary text-uppercase dropdown-toggle" type="button" id="btnTransacoes" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            Transações
+        </button>
+        <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+            <a data-tipo="receita" class="dropdown-item" href="#" id="btnReceita"><i class="fas fa-circle" style="color:#006400;"></i>  Receitas</a>
+            <a data-tipo="despesa" class="dropdown-item" href="#" id="btnDespesa"><i class="fas fa-circle" style="color:#8B0000;"></i>  Despesas</a>
+            <a data-tipo="transacoes" class="dropdown-item" href="#" id="btnMovimentacao"><i class="fas fa-circle" style="color:#00008B;"></i>  Movimentações</a>
+        </div>
+    </div>
+</div>
+
+<!-- Hover Table -->
+<div class="row">
+    <div class="col-8">
+        <div class="block">
+            <div class="block-header block-header-default">
+                <h3 class="block-title"></h3>
+                <div class="block-options">
+                    <div class="block-options-item">
+                    </div>
+                </div>
+            </div>
+            <div class="block-content">
+                <table id="tblTransacoes" class="table table-hover table-vcenter">
+                    <thead>
+                        <tr>
+                            <th>Data</th>
+                            <th>Descrição</th>
+                            <th>Categoria</th>
+                            <th>Conta</th>
+                            <th>Valor</th>
+                            <th></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- END Hover Table -->
+
+@section Scripts{
+    <script src="~/js/Views/Transacoes/IndexTransacoes.js"></script>
+}

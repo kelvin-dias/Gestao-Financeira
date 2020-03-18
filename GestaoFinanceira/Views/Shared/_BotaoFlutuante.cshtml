@@ -1,0 +1,22 @@
+﻿<link href="~/css/_BotaoFlutuante.css" rel="stylesheet" />
+
+<div id="circularMenu" class="circular-menu">
+
+    <a class="floating-btn" onclick="document.getElementById('circularMenu').classList.toggle('active');">
+        <i class="fa fa-plus"></i>
+    </a>
+
+    <menu class="items-wrapper">
+        <a href="#" class="menu-item" data-toggle="modal" data-target="#modal-popin-despesa">
+            <i class="fas fa-arrow-down" style="color:#8B0000;"></i>
+        </a>
+        <a href="#" class="menu-item" data-toggle="modal" data-target="#modal-popin">
+            <i class="fas fa-arrow-up" style="color:#006400;"></i>
+        </a>
+        @*<a href="#" class="menu-item">
+            <i class="far fa-credit-card" style="color:white;"></i>
+        </a>*@
+        @*<a href="#" class="menu-item fa fa-linkedin"></a>*@
+    </menu>
+
+</div>

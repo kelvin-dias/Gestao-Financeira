@@ -6,7 +6,7 @@ namespace Modelo.Entidades
 {
     public class Receita
     {
-        public long? ReceitaId { get; set; }
+        public long? Id { get; set; }
         public decimal Valor { get; set; }
         public string Descricao { get; set; }
         public bool Pago { get; set; }
@@ -14,6 +14,6 @@ namespace Modelo.Entidades
         public bool ReceitaParcelada { get; set; }
         public int? QtdParcelas { get; set; }
         public string Observacao { get; set; }
-        public DateTime DhReceita { get; set; }
+        public DateTime DataHora { get; set; }
     }
 }
